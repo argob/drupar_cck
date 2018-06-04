@@ -1,0 +1,14 @@
+<?php
+/**
+ * @file
+ * Code for the CCK feature.
+ */
+
+include_once 'drupar_cck.features.inc';
+
+function drupar_cck_init(){
+  if(module_exists('token')) {
+    include_once DRUPAL_ROOT . '/' . drupal_get_path('module', 'drupar_cck') . '/drupar_cck.token.inc';
+  }
+  drupal_add_http_header('X-Frame-Options', 'SAMEORIGIN');
+}
